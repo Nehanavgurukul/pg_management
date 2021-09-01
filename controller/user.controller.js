@@ -76,8 +76,9 @@ const livigUsers = async (req, res) => {
     let pgName = result.pgName
     try {
         let result = await user.find({ pgName: pgName }).countDocuments();
-        return res.status(200).json({
-            message : `${result} users living in this pg`
+        return res.status(201).json({
+            message : `${result} users living in this pg`,
+            status : 200
         })
 
     }
